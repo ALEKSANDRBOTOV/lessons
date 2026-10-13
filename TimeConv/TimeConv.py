@@ -1,4 +1,4 @@
-def format_duration(seconds): # конвертируем въодящее число в запись времени
+def format_duration(seconds): # конвертируем входящее число в запись времени
     if seconds < 0 or not isinstance(seconds, (int, float)) or seconds != int(seconds):
         raise ValueError("invalid duration")
         return (f"{int(seconds)}s")
