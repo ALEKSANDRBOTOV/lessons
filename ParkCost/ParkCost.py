@@ -1,12 +1,12 @@
 import math
 
-def started_hours(minutes: int) -> int:
+def started_hours(minutes):
     """Возвращает количество начатых часов за указанные минуты."""
     if minutes == 0:
         return 0
     return math.ceil(minutes / 60)
 
-def parking_fee(minutes: int, hour_price: int, day_cap: int) -> int:
+def parking_fee(minutes, hour_price, day_cap):
     """Вычисляет общую стоимость парковки в копейках."""
     if minutes <= 15: # правило - меньше 15 минут - бесплатно
         return 0
