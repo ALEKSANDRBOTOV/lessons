@@ -45,3 +45,51 @@ class ParkingSpot:
 
     def title(self):
         return f"Место {self.number}"
+
+class Recipe:
+    """Рецепт из кулинарного блокнота с базовой раскладкой."""
+
+    def __init__(self,name,base_servings,grams_per_serving):
+        self.name=name
+        self.base_servings=base_servings
+        self.grams_per_serving=grams_per_serving
+
+    def grams_for(self,serving):
+        if 0:
+            return 0
+        else:
+            return self.grams_per_serving*serving
+
+    def card(self):
+        return f"{self.name} · базово {self.base_servings} порц."
+
+
+# Пример использования:
+# recipe = Recipe("Плов", 4, 350)
+# print(recipe.grams_for(6))  # 2100
+# print(recipe.card())  # Плов · базово 4 порц.
+
+class TrainTicket:
+    """Билет на поезд: пассажир, место вида «12A», цена в копейках."""
+
+    def __init__(self, passenger, seat, price_kopecks):
+        self.passenger=passenger
+        self.seat=seat
+        self.price_kopecks=price_kopecks
+
+    def price_label(self):
+        rub=self.price_kopecks//100
+        kop=self.price_kopecks%100
+        return f"{rub},{kop:02d} ₽"
+
+    def is_window(self):
+        if self.seat[-1] in ("A", "D"):
+            return True
+        else:
+            return False
+
+    def summary(self):
+        if self.is_window():
+            return f"{self.passenger}, место {self.seat}, у окна"
+        else:
+            return f"{self.passenger}, место {self.seat}"
