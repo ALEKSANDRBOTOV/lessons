@@ -7,7 +7,7 @@ def game_result(board):
         lines.append(board[0][i] + board[1][i] + board[2][i])  # столбец
 
     lines.append(board[0][0] + board[1][1] + board[2][2])
-    lines.append(board[0][2] + board[1][1] + board[2][0])
+    lines.append(board[0][2] + board[1][1] + board[2][0]) # Диагонали
 
     for line in lines:
         if line == "XXX":
